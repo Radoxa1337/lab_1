@@ -32,6 +32,17 @@ namespace lab_1
             this.pointsToPass = pointsToPass;
             this.acceptKey = acceptKey;
         }
+        public bool Pass(int points)
+        {
+            if (pointsToPass <= points)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     public class EExam:Exam
@@ -57,6 +68,9 @@ namespace lab_1
     {
         static void Main(string[] args)
         {
+            Exam ex = new Exam("русский","тест на знание","18.09.2025",40,"Tim1");
+            Console.WriteLine(ex.Pass(23));
+
         }
     }
 }
